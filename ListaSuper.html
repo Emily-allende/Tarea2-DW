@@ -1,0 +1,25 @@
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    <script src="https://unpkg.com/prop-types@15.8.1/prop-types.js"></script>
+    <script type="text/babel">
+      const rootElement = document.getElementById('root');
+     // const listaSuper=['manzanas','naranjas','pan','cereales'];
+      const listaSuper=[{name:'manzana', Fruta:true},{name:'naranja', Fruta:true},{name:'pan', Fruta:false},{name:'cereales', Fruta:false}]
+      const lista = listaSuper.map((listaSuper,index) =>(
+        <li key={listaSuper.id}className={index.Fruta ==true ?'color1':'color2'}>{listaSuper.name}</li>
+        )
+      );
+    <style>
+        .color1{color= green}
+        .color2{color= blue}
+    </style>
+      ReactDOM.render(lista,rootElement)
+    </script>
+  </body>
+ 
+
+
+
