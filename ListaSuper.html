@@ -6,12 +6,25 @@
     <script src="https://unpkg.com/prop-types@15.8.1/prop-types.js"></script>
     <script type="text/babel">
       const rootElement = document.getElementById('root');
-     // const listaSuper=['manzanas','naranjas','pan','cereales'];
-      const listaSuper=[{name:'manzana', Fruta:true},{name:'naranja', Fruta:true},{name:'pan', Fruta:false},{name:'cereales', Fruta:false}]
-      const lista = listaSuper.map((listaSuper,index) =>(
+     const listaSuper=[{name:'manzana', Fruta:true},{name:'naranja', Fruta:true},{name:'pan', Fruta:false},{name:'cereales', Fruta:false}]
+    /*  const lista = listaSuper.map((listaSuper,index) =>(
+        <ul>
         <li className={index.Fruta ==true ?{color:"green"}:{color:"blue"}}>{listaSuper.name}</li>
+        </ul>
         )
+      );*/
+      const Lista= ({lista})=>(
+        <ul> {
+        lista.map(({name, Fruta}) => (
+          <li className={Fruta ? {color:"green"} : {color:"blur"}}>{name}</li>
+          )
+        )
+        }
+      </ul>
       );
-      ReactDOM.render(lista,rootElement)
+      const element= <><Lista lista={listaSuper}/></>
+    
+      ReactDOM.render(element,rootElement)
+      const frutaDelObjeto= listaSuper.fruta      
     </script>
   </body>
