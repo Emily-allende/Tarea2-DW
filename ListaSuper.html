@@ -9,13 +9,9 @@
      // const listaSuper=['manzanas','naranjas','pan','cereales'];
       const listaSuper=[{name:'manzana', Fruta:true},{name:'naranja', Fruta:true},{name:'pan', Fruta:false},{name:'cereales', Fruta:false}]
       const lista = listaSuper.map((listaSuper,index) =>(
-        <li key={listaSuper.id}className={index.Fruta ==true ?'color1':'color2'}>{listaSuper.name}</li>
+        <li className={index.Fruta ==true ?{color:"green"}:{color:"blue"}}>{listaSuper.name}</li>
         )
       );
-    <style>
-        .color1{color= green}
-        .color2{color= blue}
-    </style>
       ReactDOM.render(lista,rootElement)
     </script>
   </body>
