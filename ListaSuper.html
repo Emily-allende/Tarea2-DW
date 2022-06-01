@@ -16,7 +16,7 @@
       const Lista= ({lista})=>(
         <ul> {
         lista.map(({name, Fruta}) => (
-          <li className={Fruta ? {color:"green"} : {color:"blur"}}>{name}</li>
+          <li style={Fruta ? {color:"green"} : {color:"blur"}}>{name}</li>
           )
         )
         }
